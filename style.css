@@ -57,6 +57,7 @@ nav a:hover{
     background-color: rgb(70, 211, 89);
 }
 
+
 section {
     padding: 20px;
 }
@@ -178,6 +179,31 @@ footer p{
     
 }
 
+.logout-btn {
+    background-color: #cc0000; /* Червоний колір для кнопки виходу */
+    color: #fff; /* Білий колір тексту */
+    padding: 10px 20px; /* Встановлення відступів */
+    text-decoration: none; /* Видалення декорації посилання */
+    border: none; /* Видалення меж */
+    border-radius: 5px; /* Округлені кути */
+    cursor: pointer; /* Зміна курсора при наведенні */
+}
+
+.logout-btn:hover {
+    background-color: #ff0000; /* Змінює колір кнопки при наведенні */
+}
+
+.profile-section{
+    display: flex;
+    flex-direction: column;
+    padding-left: 40px;
+}
+
+.profile-btn{
+    display: flex;
+    margin: 20px 0;
+}
+
 /* ------ */
 
 /* контакт */
@@ -193,5 +219,11 @@ footer p{
 .contact-text{
     margin: 25px;
 }
+
+.error-message{
+    font-size: 12px;
+    color: #b40303;
+}
+
 
 /* ------- */
