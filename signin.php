@@ -9,8 +9,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['username'];
     $password = $_POST['password'];
 
+    // Хешування паролю
+    $hashed_password = md5($password); // Використовуйте більш безпечні методи хешування, такі як bcrypt, а не md5
+
     // Запит до бази даних для перевірки наявності користувача з введеним email та паролем
-    $query = "SELECT * FROM customers WHERE email='$email' AND password='$password'";
+    $query = "SELECT * FROM customers WHERE email='$email' AND password='$hashed_password'";
     $result = mysqli_query($connect, $query);
 
     if (mysqli_num_rows($result) == 1) { // Якщо користувач існує

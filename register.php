@@ -8,6 +8,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $l_name = $_POST['lastname'];
     $email = $_POST['email'];
     $password = $_POST['password'];
+    $hashed_password = md5($password); // Хешування паролю
+
     $phone_number = $_POST['phone_number'];
     $address = $_POST['address'];
 
@@ -20,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $error = "Користувач з таким email або телефонним номером вже існує";
     } else {
         // Додавання нового користувача до бази даних
-        $insert_query = "INSERT INTO customers (email, password, firstname, lastname, phone_number, address) VALUES ('$email', '$password','$f_name', '$l_name', '$phone_number', '$address')";
+        $insert_query = "INSERT INTO customers (email, password, firstname, lastname, phone_number, address) VALUES ('$email', '$hashed_password','$f_name', '$l_name', '$phone_number', '$address')";
         if (mysqli_query($connect, $insert_query)) {
             $_SESSION['success'] = "Ви успішно зареєстровані!";
             header("Location: profile.php");

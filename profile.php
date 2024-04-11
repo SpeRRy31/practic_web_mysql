@@ -4,7 +4,7 @@ session_start();
 // Перевірка, чи користувач увійшов в систему (можливо, за допомогою сесій)
 if (!isset($_SESSION['user_id'])) {
     // Якщо користувач не увійшов в систему, перенаправте його на сторінку входу
-    header("Location: login.php");
+    header("Location: signin.php");
     exit(); // Зупиняємо виконання скрипту, щоб уникнути відображення вмісту сторінки профілю для неавторизованих користувачів
 }
 
@@ -47,16 +47,31 @@ if (mysqli_num_rows($result) > 0) {
 </header>
 
 <section class="profile-section">
-    <div class="profile-info">
         <h2>Інформація профілю користувача</h2>
-        <p>Ім'я: <?php echo $row['firstname']; ?></p>
-        <p>Прізвище: <?php echo $row['lastname']; ?></p>
-        <p>Email: <?php echo $row['email']; ?></p>
-        <p>Номер телефону: <?php echo $row['phone_number']; ?></p>
-        <p>Адреса: <?php echo $row['address']; ?></p>
+    <div class="profile-info">
+        <div  class="profile-info-image">
+            <?php if (!empty($row['avatar'])): ?>
+                <img src="<?php echo $row['avatar']; ?>" alt="Аватар користувача" class="profile-avatar">
+            <?php else: ?>
+                <img src="img/avt.png" alt="Базовий аватар" class="profile-avatar">
+            <?php endif; ?>
+        </div>
+
+        <div  class="profile-info-text">
+            <p>Ім'я: <?php echo $row['firstname']; ?></p>
+            <p>Прізвище: <?php echo $row['lastname']; ?></p>
+            <p>Email: <?php echo $row['email']; ?></p>
+            <p>Номер телефону: <?php echo $row['phone_number']; ?></p>
+            <p>Адреса: <?php echo $row['address']; ?></p>
+        </div>
+    </div>
+    <div class="profile-btn">
+        <a href="edit_profile.php" class="edit-profile-btn">Редагувати</a>
+        <a href="change_password.php" class="change-password-btn">Змінити пароль</a>
     </div>
     <div class="profile-btn">
         <a href="vendor/logout.php" class="logout-btn">Вийти</a>
+        <a href="#" class="delete-profile-btn" onclick="confirmDelete()">Видалити</a>
     </div>
 </section>
 
@@ -64,6 +79,13 @@ if (mysqli_num_rows($result) > 0) {
 <footer>
     <p>&copy; 2024 DottSew</p>
 </footer>
+<script>
+    function confirmDelete() {
+        if (confirm("Ви впевнені, що хочете видалити свій профіль?")) {
+            window.location.href = "vendor/delete_profile.php";
+        }
+    }
+</script>
 
 </body>
 </html>

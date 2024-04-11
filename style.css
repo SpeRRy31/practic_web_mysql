@@ -180,17 +180,59 @@ footer p{
 }
 
 .logout-btn {
-    background-color: #cc0000; /* Червоний колір для кнопки виходу */
-    color: #fff; /* Білий колір тексту */
+    background-color: #ffffff; /* Червоний колір для кнопки виходу */
+    color: #ff0000; /* Білий колір тексту */
     padding: 10px 20px; /* Встановлення відступів */
     text-decoration: none; /* Видалення декорації посилання */
     border: none; /* Видалення меж */
     border-radius: 5px; /* Округлені кути */
     cursor: pointer; /* Зміна курсора при наведенні */
+    border: 3px solid#b40303;
+    font-weight: bold;
 }
 
 .logout-btn:hover {
-    background-color: #ff0000; /* Змінює колір кнопки при наведенні */
+    background-color: #b40303;
+    color: #f0f0f0;
+    transition: 250ms; /* Змінює колір кнопки при наведенні */
+}
+
+
+.delete-profile-btn {
+    background-color: #ff0000; /* Червоний колір для кнопки виходу */
+    color: #ffffff; /* Білий колір тексту */
+    padding: 10px 20px; /* Встановлення відступів */
+    text-decoration: none; /* Видалення декорації посилання */
+    border: none; /* Видалення меж */
+    border-radius: 5px; /* Округлені кути */
+    cursor: pointer; /* Зміна курсора при наведенні */
+    border: 3px solid#b40303;
+    font-weight: bold;
+}
+
+.delete-profile-btn:hover {
+    background-color: #b40303;
+    color: #f0f0f0;
+    transition: 250ms; /* Змінює колір кнопки при наведенні */
+}
+
+.change-avatar-btn, .edit-profile-btn, .change-password-btn{
+    background-color: #1c65c5; /* Червоний колір для кнопки виходу */
+    color: #ffffff; /* Білий колір тексту */
+    padding: 10px 20px; /* Встановлення відступів */
+    text-decoration: none; /* Видалення декорації посилання */
+    border: none; /* Видалення меж */
+    border-radius: 5px; /* Округлені кути */
+    cursor: pointer; /* Зміна курсора при наведенні */
+    border: 3px solid#1c65c5;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.change-avatar-btn:hover, .edit-profile-btn:hover, .change-password-btn:hover {
+    background-color: #ffffff;
+    color: #1c65c5;
+    transition: 250ms; /* Змінює колір кнопки при наведенні */
 }
 
 .profile-section{
@@ -201,8 +243,24 @@ footer p{
 
 .profile-btn{
     display: flex;
-    margin: 20px 0;
+    gap: 10px;
+    margin: 4px 0;
 }
+
+
+.profile-info{
+    display: flex;
+    flex-direction: row;
+}
+
+.profile-avatar{
+    width: 200px;
+    height: 200px;
+    margin: 15px 30px 10px 0px;
+    border-radius: 50%;
+    box-shadow: 0 0 4px 4px rgb(145, 145, 145);
+}
+
 
 /* ------ */
 
@@ -227,3 +285,112 @@ footer p{
 
 
 /* ------- */
+
+
+/* edit */
+
+.edit-profile-section {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+}
+
+.edit-profile-form {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px; 
+}
+
+.edit-profile-form h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.edit-profile-form .form-group {
+    margin-bottom: 20px;
+}
+
+.edit-profile-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.edit-profile-form input[type="text"],
+.edit-profile-form input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.edit-profile-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(7, 156, 27);
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.edit-profile-form button:hover {
+    background-color: rgb(70, 211, 89);
+}
+
+.change-password-section {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.change-password-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.change-password-section form {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+}
+
+.change-password-section form .form-group {
+    margin-bottom: 20px;
+}
+
+.change-password-section form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.change-password-section form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.change-password-section form button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(7, 156, 27);
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.change-password-section form button[type="submit"]:hover {
+    background-color: rgb(70, 211, 89);
+}
+
+
+
+/* ------ */
