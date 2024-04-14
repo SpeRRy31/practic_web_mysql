@@ -37,6 +37,10 @@ nav a:hover{
     background-color: rgba(110, 110, 110, 0.164);
 }
 
+
+
+
+
 .acount-btn{
     width: 540px;
     display: flex;
@@ -253,12 +257,17 @@ footer p{
     flex-direction: row;
 }
 
-.profile-avatar{
+.profile-info_image{
     width: 200px;
     height: 200px;
-    margin: 15px 30px 10px 0px;
+    
     border-radius: 50%;
     box-shadow: 0 0 4px 4px rgb(145, 145, 145);
+    overflow: hidden;
+}
+
+.profile-avatar{
+    margin: 15px 30px 10px 0px;
 }
 
 
@@ -377,6 +386,9 @@ footer p{
     border-radius: 5px;
 }
 
+.change-password-section form button[type="submit"]:hover {
+    background-color: rgb(70, 211, 89);
+}
 .change-password-section form button[type="submit"] {
     width: 100%;
     padding: 10px;
@@ -386,11 +398,3 @@ footer p{
     border-radius: 5px;
     cursor: pointer;
 }
-
-.change-password-section form button[type="submit"]:hover {
-    background-color: rgb(70, 211, 89);
-}
-
-
-
-/* ------ */
